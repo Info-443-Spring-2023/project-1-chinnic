@@ -1,0 +1,23 @@
+body {
+    background-color: #D2A8FD;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    float: left;
+ }
+
+ section {
+     text-align: center;
+     background-color: #FFF9B4;
+     padding: 0.5em;
+ }
+
+ .map {
+     float: right;
+ }
+
+ .poop {
+    width: 100px;
+    height: 100px
+ }

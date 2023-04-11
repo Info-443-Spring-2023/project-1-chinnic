@@ -1,0 +1,314 @@
+[
+  {
+    "id": 1,
+    "src": "img/bathroom1.jpg",
+    "building": "RAI",
+    "floor": "First Floor",
+    "rating": "4",
+    "location": "North"
+  },
+  {
+    "id": 2,
+    "src": "img/bathroom2.jpg",
+    "building": "ODE",
+    "floor": "Second Floor",
+    "rating": "2",
+    "location": "West"
+  },
+  {
+    "id": 3,
+    "src": "img/bathroom3.jpg",
+    "building": "KNE",
+    "floor": "Second Floor",
+    "rating": "5",
+    "location": "West"
+  },
+  {
+    "id": 4,
+    "src": "img/bathroom4.jpg",
+    "building": "GWN",
+    "floor": "First Floor",
+    "rating": "3",
+    "location": "West"
+  },
+  {
+    "id": 5,
+    "src": "img/bathroom5.jpg",
+    "building": "CHB",
+    "floor": "Third Floor",
+    "rating": "1",
+    "location": "South"
+  },
+  {
+    "id": 6,
+    "src": "img/bathroom6.jpg",
+    "building": "KNE",
+    "floor": "Basement",
+    "rating": "4",
+    "location": "West"
+  },
+  {
+    "id": 7,
+    "src": "img/bathroom7.jpg",
+    "building": "ALB",
+    "floor": "Third Floor",
+    "rating": "5",
+    "location": "South"
+  },
+  {
+    "id": 8,
+    "src": "img/bathroom8.jpg",
+    "building": "LEW",
+    "floor": "First Floor",
+    "rating": "1",
+    "location": "North"
+  },
+  {
+    "id": 9,
+    "src": "img/bathroom9.jpg",
+    "building": "PCAR",
+    "floor": "First Floor",
+    "rating": "5",
+    "location": "North"
+  },
+  {
+    "id": 10,
+    "src": "img/bathroom10.jpg",
+    "building": "IMA",
+    "floor": "Second Floor",
+    "rating": "5",
+    "location": "East"
+  },
+  {
+    "id": 11,
+    "src": "img/bathroom11.jpg",
+    "building": "MGH",
+    "floor": "Fourth Floor",
+    "rating": "4",
+    "location": "South"
+  },
+  {
+    "id": 12,
+    "src": "img/bathroom12.jpg",
+    "building": "WIL",
+    "floor": "First Floor",
+    "rating": "2",
+    "location": "South"
+  },
+  {
+    "id": 13,
+    "src": "img/bathroom13.jpg",
+    "building": "GLD",
+    "floor": "Third Floor",
+    "rating": "2",
+    "location": "West"
+  },
+  {
+    "id": 14,
+    "src": "img/bathroom14.jpg",
+    "building": "RAI",
+    "floor": "First Floor",
+    "rating": "5",
+    "location": "North"
+  },
+  {
+    "id": 15,
+    "src": "img/bathroom15.jpg",
+    "building": "LAW",
+    "floor": "Third Floor",
+    "rating": "5",
+    "location": "North"
+  },
+  {
+    "id": 16,
+    "src": "img/bathroom16.jpg",
+    "building": "ALB",
+    "floor": "First Floor",
+    "rating": "2",
+    "location": "South"
+  },
+  {
+    "id": 17,
+    "src": "img/bathroom17.jpg",
+    "building": "CHB",
+    "floor": "Fourth Floor",
+    "rating": "5",
+    "location": "South"
+  },
+  {
+    "id": 18,
+    "src": "img/bathroom18.jpg",
+    "building": "HUB",
+    "floor": "Third Floor",
+    "rating": "4",
+    "location": "East"
+  },
+  {
+    "id": 19,
+    "src": "img/bathroom19.jpg",
+    "building": "PAB",
+    "floor": "First Floor",
+    "rating": "2",
+    "location": "West"
+  },
+  {
+    "id": 20,
+    "src": "img/bathroom20.jpg",
+    "building": "PDL",
+    "floor": "Third Floor",
+    "rating": "2",
+    "location": "East"
+  },
+  {
+    "id": 21,
+    "src": "img/bathroom1.jpg",
+    "building": "BRK",
+    "floor": "Fourth Floor",
+    "rating": "4",
+    "location": "North"
+  },
+  {
+    "id": 22,
+    "src": "img/bathroom2.jpg",
+    "building": "ART",
+    "floor": "First Floor",
+    "rating": "1",
+    "location": "North"
+  },
+  {
+    "id": 23,
+    "src": "img/bathroom3.jpg",
+    "building": "RAI",
+    "floor": "Third Floor",
+    "rating": "1",
+    "location": "North"
+  },
+  {
+    "id": 24,
+    "src": "img/bathroom4.jpg",
+    "building": "SUZ",
+    "floor": "First Floor",
+    "rating": "1",
+    "location": "West"
+  },
+  {
+    "id": 25,
+    "src": "img/bathroom5.jpg",
+    "building": "JHN",
+    "floor": "Third Floor",
+    "rating": "1",
+    "location": "West"
+  },
+  {
+    "id": 26,
+    "src": "img/bathroom6.jpg",
+    "building": "HUB",
+    "floor": "First Floor",
+    "rating": "4",
+    "location": "East"
+  },
+  {
+    "id": 27,
+    "src": "img/bathroom7.jpg",
+    "building": "LAW",
+    "floor": "First Floor",
+    "rating": "2",
+    "location": "North"
+  },
+  {
+    "id": 28,
+    "src": "img/bathroom8.jpg",
+    "building": "SAV",
+    "floor": "First Floor",
+    "rating": "3",
+    "location": "West"
+  },
+  {
+    "id": 29,
+    "src": "img/bathroom9.jpg",
+    "building": "ALB",
+    "floor": "Third Floor",
+    "rating": "1",
+    "location": "South"
+  },
+  {
+    "id": 30,
+    "src": "img/bathroom10.jpg",
+    "building": "CHB",
+    "floor": "Third Floor",
+    "rating": "5",
+    "location": "South"
+  },
+  {
+    "id": 31,
+    "src": "img/bathroom11.jpg",
+    "building": "LOW",
+    "floor": "First Floor",
+    "rating": "3",
+    "location": "South"
+  },
+  {
+    "id": 32,
+    "src": "img/bathroom12.jpg",
+    "building": "LSB",
+    "floor": "First Floor",
+    "rating": "3",
+    "location": "South"
+  },
+  {
+    "id": 33,
+    "src": "img/bathroom13.jpg",
+    "building": "WFS",
+    "floor": "First Floor",
+    "rating": "5",
+    "location": "South"
+  },
+  {
+    "id": 34,
+    "src": "img/bathroom14.jpg",
+    "building": "PDL",
+    "floor": "Second Floor",
+    "rating": "5",
+    "location": "East"
+  },
+  {
+    "id": 35,
+    "src": "img/bathroom15.jpg",
+    "building": "BLD",
+    "floor": "First Floor",
+    "rating": "2",
+    "location": "South"
+  },
+  {
+    "id": 36,
+    "src": "img/bathroom16.jpg",
+    "building": "SAV",
+    "floor": "Third Floor",
+    "rating": "1",
+    "location": "West"
+  },
+  {
+    "id": 37,
+    "src": "img/bathroom17.jpg",
+    "building": "LOW",
+    "floor": "Second Floor",
+    "rating": "4",
+    "location": "East"
+  },
+  {
+    "id": 38,
+    "src": "img/bathroom18.jpg",
+    "building": "MOR",
+    "floor": "Third Floor",
+    "rating": "3",
+    "location": "South"
+  },
+  {
+    "id": 39,
+    "src": "img/bathroom19.jpg",
+    "building": "LAW",
+    "floor": "Third Floor",
+    "rating": "5",
+    "location": "North"
+  }
+]
