@@ -8,4 +8,4 @@ A candidate element I was thinking about to analyze for architectual quality wou
 <img src="/images/umlcomponent.png" width=60% height=60%>
 
 ## UML Activity Diagram
-<img src="/images/umlactivity.png" width=75% height=75%>
+<img src="/images/umlactivity.png" width=85% height=85%>
