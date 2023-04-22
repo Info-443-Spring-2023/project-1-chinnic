@@ -9,3 +9,8 @@ A candidate element I was thinking about to analyze for architectual quality wou
 
 ## UML Activity Diagram
 <img src="/images/umlactivity.png" width=85% height=85%>
+
+## How To Run Tests
+
+All the tests I have written are in the tests folder of the project repository. Running npm test or jest --coverage in the project repo should work. 
+<img src="/images/testcoverage.png" width=85% height=85%>
