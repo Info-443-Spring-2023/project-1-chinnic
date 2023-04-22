@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 
 import { initializeApp } from 'firebase/app';
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 import App from './Components/App.js';
-//import data from './data/bathrooms.json'
+// import data from './data/bathrooms.json'
 
 
 // App's Firebase configuration
@@ -20,6 +22,10 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore();
+
+export { auth, db };
 
 fetch("./data/bathrooms.json")
   .then((response) => {

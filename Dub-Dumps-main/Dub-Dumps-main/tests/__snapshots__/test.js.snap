@@ -1,0 +1,290 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Example tests Find A Bathroom! Component renders the home page 1`] = `
+<div>
+  <a
+    className="map-link"
+    href="/search"
+    onClick={[Function]}
+  >
+    <h2
+      className="map-title"
+      data-testid="map-title"
+    >
+      Find a Bathroom!
+    </h2>
+  </a>
+  <div>
+    <div
+      className="map"
+    >
+      <iframe
+        className="map-image"
+        height="550px"
+        src="https://snazzymaps.com/embed/398528"
+        title="DUB DUMPS bathroom map"
+        width="80%"
+      />
+      <p>
+        Use our map to find nearby bathrooms!
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Structured Searches Component Renders Correctly snapshot of component renders correctly 1`] = `
+<div>
+  <nav
+    className="navbar navbar-expand-lg navbar-dark bg-dark"
+    name="navbar"
+  >
+    <button
+      aria-controls="responsive-navbar-nav"
+      aria-label="Toggle navigation"
+      className="hamburger navbar-toggler collapsed"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      aria-expanded={null}
+      className="navbar-collapse collapse"
+      id="responsive-navbar-nav navBar"
+    >
+      <div
+        className="mr-auto navbar-nav"
+        onKeyDown={[Function]}
+      >
+        <select
+          className="navDropDown"
+          data-testid="select building"
+          id="buildingSelect"
+          onChange={[Function]}
+        >
+          <option
+            value=""
+          >
+            Building
+          </option>
+          <option
+            value="RAI"
+          >
+            RAI
+          </option>
+          <option
+            value="ODE"
+          >
+            ODE
+          </option>
+          <option
+            value="KNE"
+          >
+            KNE
+          </option>
+          <option
+            value="GWN"
+          >
+            GWN
+          </option>
+          <option
+            value="CHB"
+          >
+            CHB
+          </option>
+          <option
+            value="ALB"
+          >
+            ALB
+          </option>
+          <option
+            value="LEW"
+          >
+            LEW
+          </option>
+          <option
+            value="PCAR"
+          >
+            PCAR
+          </option>
+          <option
+            value="IMA"
+          >
+            IMA
+          </option>
+          <option
+            value="MGH"
+          >
+            MGH
+          </option>
+          <option
+            value="WIL"
+          >
+            WIL
+          </option>
+          <option
+            value="GLD"
+          >
+            GLD
+          </option>
+          <option
+            value="LAW"
+          >
+            LAW
+          </option>
+          <option
+            value="HUB"
+          >
+            HUB
+          </option>
+          <option
+            value="PAB"
+          >
+            PAB
+          </option>
+          <option
+            value="PDL"
+          >
+            PDL
+          </option>
+          <option
+            value="BRK"
+          >
+            BRK
+          </option>
+          <option
+            value="ART"
+          >
+            ART
+          </option>
+          <option
+            value="SUZ"
+          >
+            SUZ
+          </option>
+          <option
+            value="JHN"
+          >
+            JHN
+          </option>
+          <option
+            value="SAV"
+          >
+            SAV
+          </option>
+          <option
+            value="LOW"
+          >
+            LOW
+          </option>
+          <option
+            value="LSB"
+          >
+            LSB
+          </option>
+          <option
+            value="WFS"
+          >
+            WFS
+          </option>
+          <option
+            value="BLD"
+          >
+            BLD
+          </option>
+          <option
+            value="MOR"
+          >
+            MOR
+          </option>
+        </select>
+        <select
+          className="navDropDown"
+          data-testid="select floor"
+          id="floorSelect"
+          onChange={[Function]}
+        >
+          <option
+            value=""
+          >
+            Floor
+          </option>
+          <option
+            value="First Floor"
+          >
+            First Floor
+          </option>
+          <option
+            value="Second Floor"
+          >
+            Second Floor
+          </option>
+          <option
+            value="Third Floor"
+          >
+            Third Floor
+          </option>
+          <option
+            value="Basement"
+          >
+            Basement
+          </option>
+          <option
+            value="Fourth Floor"
+          >
+            Fourth Floor
+          </option>
+        </select>
+        <select
+          className="navDropDown"
+          data-testid="select location"
+          id="locationSelect"
+          onChange={[Function]}
+        >
+          <option
+            value=""
+          >
+            Location
+          </option>
+          <option
+            value="North"
+          >
+            North
+          </option>
+          <option
+            value="West"
+          >
+            West
+          </option>
+          <option
+            value="South"
+          >
+            South
+          </option>
+          <option
+            value="East"
+          >
+            East
+          </option>
+        </select>
+        <div
+          className="col-auto"
+        >
+          <a
+            className="btn btn-warning"
+            href="/search"
+            id="submitButton"
+            onClick={[Function]}
+            type="submit"
+          >
+            Search!
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+`;

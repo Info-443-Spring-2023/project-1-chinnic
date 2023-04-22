@@ -56,8 +56,7 @@ function App(props) {
         <Header currentUser={currentUser} />
         <Routes>
           <Route path="signin" element={
-            <SignIn currentUser={currentUser} loginFunction={loginUser} />
-          } />
+            <SignIn currentUser={currentUser} loginFunction={loginUser} />} />
           <Route path='home' element={<HomePage />} />
           <Route path='search' element={<StructuredSearch data={props.data} filterCallback={applyFilter} />} >
             <Route path='/search/br:bathroomID' element={<BathroomPage data={props.data} currentUser={currentUser} />} />

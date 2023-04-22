@@ -59,19 +59,19 @@ export function StructuredSearch(props) {
 
 
     return (
-        <div><Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <div><Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" name="navbar">
             <Navbar.Toggle aria-controls="responsive-navbar-nav" className="hamburger" />
             <Navbar.Collapse id="responsive-navbar-nav navBar">
                 <Nav className="mr-auto">
-                    <select id="buildingSelect" className="navDropDown" onChange={changeBldg} >
+                    <select id="buildingSelect" className="navDropDown" onChange={changeBldg} data-testid="select building">
                         <option value="">Building</option>
                         {buildings}
                     </select>
-                    <select id="floorSelect" className="navDropDown" onChange={changeFloor} >
+                    <select id="floorSelect" className="navDropDown" onChange={changeFloor} data-testid="select floor">
                         <option value="">Floor</option>
                         {floors}
                     </select>
-                    <select id="locationSelect" className="navDropDown" onChange={changeLocation} >
+                    <select id="locationSelect" className="navDropDown" onChange={changeLocation} data-testid="select location">
                         <option value="">Location</option>
                         {locations}
                     </select>
