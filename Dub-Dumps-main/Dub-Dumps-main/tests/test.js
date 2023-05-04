@@ -1,6 +1,6 @@
 import renderer from 'react-test-renderer';
-import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate as navigateTo } from 'react-router-dom';
-import { render, screen, cleanup } from "@testing-library/react";
+import { BrowserRouter as Router } from 'react-router-dom';
+import { render, screen } from "@testing-library/react";
 import '@testing-library/jest-dom';
 import userEvent from "@testing-library/user-event";
 
@@ -10,9 +10,9 @@ import bathroom from '../public/data/bathrooms.json';
 
 // example tests to make sure I was doing it right
 
-describe('Example tests',() => {
+describe("Example tests",() => {
 
-    describe('Find A Bathroom! Component',() => {
+    describe("Find A Bathroom! Component",() => {
 
         it('renders the home page', () => {
             const component = renderer.create(
@@ -41,7 +41,6 @@ describe('Example tests',() => {
                 </Router>
             );
             const text = screen.getByTestId('map-title');
-            //expect(text).toHaveTextContent("Find a Bathroom!");
             expect(screen.getByText("Find a Bathroom!")).toBeInTheDocument(); 
         })
     })
@@ -49,7 +48,7 @@ describe('Example tests',() => {
 
 // 
 
-describe('Structured Searches Component Renders Correctly',() => {
+describe("Structured Searches Component Renders Correctly",() => {
     
     test("navigation search bar renders without errors", () => {
         const callback = jest.fn();
@@ -73,7 +72,7 @@ describe('Structured Searches Component Renders Correctly',() => {
     })
 })
 
-describe('Default values are correct',() => {
+describe("Default values are correct",() => {
     
     test("Building default value", () => {
         const callback = jest.fn();
@@ -107,7 +106,7 @@ describe('Default values are correct',() => {
 })
 
 
-describe('Allows user to change options',() => {
+describe("Allows user to change options",() => {
     
     test("Changing building value", () => {
         const callback = jest.fn();
@@ -152,7 +151,7 @@ describe('Allows user to change options',() => {
     })
 })
 
-describe('Button Works Correctly',() => {
+describe("Button Works Correctly",() => {
 
     test("Button renders correctly", () => {
         const callback = jest.fn();

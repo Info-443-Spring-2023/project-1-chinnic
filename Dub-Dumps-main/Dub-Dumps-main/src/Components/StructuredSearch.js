@@ -1,8 +1,6 @@
-import { setSelectionRange } from '@testing-library/user-event/dist/utils';
 import React, { useState } from 'react'; //import React Component
 import { Link, Outlet } from 'react-router-dom';
-import { Nav, Navbar, NavDropdown } from "react-bootstrap";
-// import "bootstrap/dist/css/bootstrap.min.css";
+import { Nav, Navbar } from "react-bootstrap";
 
 export function StructuredSearch(props) {
     const [bldgSelected, setBldg] = useState('');
@@ -21,42 +19,30 @@ export function StructuredSearch(props) {
         setLocation(evt.target.value);
     }
 
-    const handleClick = evt => {
+    const handleClick = () => {
         props.filterCallback(bldgSelected, floorSelected, locationSelected);
     }
 
-    // Array of buildings
-    let uniqueBuildings = new Set();
-    for (let i = 0; i < props.data.length; i++) {
-        uniqueBuildings.add(props.data[i].building)
+    // Returns a unique array of options for a specific filtered value
+    function createUniqueOptions(valueType) {
+        const allOptions = props.data
+            .map(item => item[valueType]);  // map to get an array of only the specific value type
+
+        const uniqueOptions = [...new Set(allOptions)]; // creates Set for unique values, then back to array
+
+        return uniqueOptions.map((valueType) => {
+            return <option key={valueType} value={valueType}>{valueType}</option>;
+        })
     }
-    uniqueBuildings = Array.from(uniqueBuildings);
-    const buildings = uniqueBuildings.map((building) => {
-        return <option key={building} value={building}>{building}</option>
-    })
+
+    // Array of buildings
+    const buildings = createUniqueOptions("building");
 
     // Array of floors
-    let uniqueFloors = new Set();
-    for (let i = 0; i < props.data.length; i++) {
-        uniqueFloors.add(props.data[i].floor)
-    }
-    uniqueFloors = Array.from(uniqueFloors);
+    const floors = createUniqueOptions("floor");
 
-    const floors = uniqueFloors.map((floor) => {
-        return <option key={floor} value={floor}>{floor}</option>
-    })
-
-    // Array of Locations
-    let uniqueLocations = new Set();
-    for (let i = 0; i < props.data.length; i++) {
-        uniqueLocations.add(props.data[i].location)
-    }
-    uniqueLocations = Array.from(uniqueLocations);
-
-    const locations = uniqueLocations.map((location) => {
-        return <option key={location} value={location}>{location}</option>
-    })
-
+    // Array of locations
+    const locations = createUniqueOptions("location");
 
     return (
         <div><Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" name="navbar">
