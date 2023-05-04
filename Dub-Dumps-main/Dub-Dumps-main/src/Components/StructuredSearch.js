@@ -35,13 +35,13 @@ export function StructuredSearch(props) {
         })
     }
 
-    // Array of buildings
+    // Array of unique building names
     const buildings = createUniqueOptions("building");
 
-    // Array of floors
+    // Array of unique floor names
     const floors = createUniqueOptions("floor");
 
-    // Array of locations
+    // Array of unique location names
     const locations = createUniqueOptions("location");
 
     return (
