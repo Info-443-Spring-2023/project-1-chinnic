@@ -103,12 +103,12 @@ Figure 2 depicts an activity diagram for the Dub Dumps web app. The activity dia
       const locations = uniqueLocations.map((location) => {
           return <option key={location} value={location}>{location}</option>
       }) 
-*Figure 3: StructuredSearch function located in its respective component*
+*Figure 3: Orginal StructuredSearch function located in its respective component*
 
-Figure 3 above depicts the original code of the *_StructuredSearch_* function written in the **StructuredSearch** component. This is the function that takes the user's bathroom criteria in the filter navigation bar and filters for valid bathroom cards. 
+Figure 3 above depicts the original code of the *_StructuredSearch_* function written in the **StructuredSearch** component. This is the function that takes the user's bathroom criteria in the filter navigation bar and filters for valid bathroom cards.
 
 ## Code Smells
-There are a couple code smells when looking at the `StructuredSearch` function. These include:
+There are a couple code smells when looking at the original `StructuredSearch` function. These include:
 
 ### Duplicated Code
     ...
@@ -212,18 +212,119 @@ In the first line, `NavDropdown` is completely deleted from the import statement
 
 ## Documentation and Readability
 
+Throughout the codebase, there are many places where the code lacks readability. Some confusing logic in the code, along with a lack of comments, creates functions that are hard to understand for anyone trying to read the codebase. Here is an example from the component `StarRating.js`:
 
+        export default function StarRating(props) {
+        ...
+            return (
+                <div className="star-rating">
+                    {[...Array(5)].map((star, index) => {
+                        index += 1;
+                        return (
+                            <button
+                                type="button"
+                                key={index}
+                                className={index <= (hover || rating) ? "on" : "off"}
+                                onClick={() => {
+                                    if (!props.currentUser.userId) {
+                                        navigateTo("/signin");
+                                    } else {
+                                        setRating(index);
+                                        firebaseSet(ratingRef, rating);
+                                    }
+                                }}
+                                onMouseEnter={() => setHover(index)}
+                                onMouseLeave={() => setHover(rating)}
+                            >
+                                <span className="star mx-2">&#9733;</span>
+                            </button>
+                        );
+                    })}
+                </div >
+            );
+        }
+*Figure 10: StarRating component readability issues*
+
+Figure 10 above is the logic for creating the star rating system. Here, we can see that for some reason, all the logic is written in the return value, which is strange to begin with and also makes it hard to read. There are also a lack of comments anywhere, making the logic hard to understand at first glance. Furthermore, there are even declared but unused variables, in this case being `star`. 
+
+In the future, if I chose this as my component to refactor, I would create a function outside the return value to make the star rating buttons, and then call it in the return afterwards. I would also try to comment the purpose of the code, if needed. Finally, I would make  sure that all variables that are declared are used, and if not, then they are deleted.
+
+## Standards Violations
+
+There isn't much that the codebase has to conform to in regards to standards, but one that does somewhat stand out are the alt tags on the images in `BathroomList.js`. The function returns the location, building, and floor of the bathroom, as well as the image, but the alt tag is the same on every single image:
+
+| `<img src={bathroomData.src} className="pb-1 br-img" alt="the specific bathroom" />` |
+|:--:|
+| *Figure 11: `BathroomList.js` images' alt tags are all the same* |
+
+In Figure 11 above, we see that every single image on a bathroom card listed on BathroomList (and thus, on the Search Page) has the same alt tag, "the specific bathroom". This will make it hard for those with accessibility issues to tell which bathroom image is which. 
+
+Interestingly enough, the alt tags for the images are specific to the bathroom on their `BathroomPage.js` bathroom card, but not on the Bathroom list. In the future, if I chose this component to refactor, I would find a way so that the image on each bathroom card in the list has either a different alt tag, or one that matches with that specific bathroom.
+
+## Design Quality Deficiencies
+
+Other than modifiability, there are none other design qualities required of this codebase.
 
 # Automated Tests
 
-All the tests I have written are in the "tests" folder of the project repository. Included in that file are a few intial tests I did to ensure that the code and dependencies are running correctly. The main architectual element I focused my tests on was the **StructuredSearch** component, which are .
+All the tests I have written are in the "tests" folder of the project repository, in file `test.js`. Included in that file are a few intial tests I did to ensure that the code and dependencies are running correctly. The main architectual element I focused my tests on was the `StructuredSearch.js` component.
 
-In order to run the tests:
+## Test Instructions:
 
 1. On the command line or terminal, navigate to the **"Dub-Dumps-main"** folder in the repository.
 2. Run `npm install` to install any dependencies needed for testing.
 3. Run `npm test` for standard testing, or alternatively, run `jest --coverage` to get a code coverage report.
 
+## Test Coverage Documentation
 | <img src="/images/testcoverage.png" width=85% height=85%> |
 |:--:| 
-| *Figure : Code Testing Coverage Report* |
+| *Figure 12: Code Testing Coverage Report* |
+
+In this coverage test, as depicted in Figure 12, the first three tests are example tests to ensure I knew what I was doing. These tests test the home page and the Find A Bathroom button. The rest of the tests relate to StructuredSearch, and will be discussed below.
+
+## Test Discussion
+
+Below are the defintions and explanations of the tests I wrote for the StructuredSearch component. This component takes the user's bathroom criteria in the filter navigation bar and filters for valid bathroom cards. The tests below makes sure it works correctly:
+
+### describe('Structured Searches Component Renders Correctly')
+
+These basic tests makes sure that the StructuredSearch page even renders correctly. Included are:
+
+- **test("navigation search bar renders without errors")**
+  - This test makes sure that the navigation search bar renders correctly and shown in the document. It expects for a 'navigation' role to be in the document. This test is important as it contains all of the StructuredSearch UI, so it is necessary to make sure it loads in. 
+- **test("snapshot of component renders correctly")**
+  - This test makes sure that nothing has changed between a previous snapshot of the component, and the current component rendered. A snapshot is taken when a test is first run, and after every other test it is compared to this snapshot (until obsolete snapshots are reset with `-u` in the command line following `npm test`). This test converts the rendered component into JSON and compares it to a snapshot's JSON. This test was written so that I can ensure nothing in the returned code has changed from what was expected to be rendered, which is contained in the snapshot's JSON.
+  
+### **describe("Default values are correct")**
+
+These three tests make sure that the default values in the filtering options are rendered correctly. These tests are important: we must make sure that nothing is being filtered at first, since it could affect what is first shown on the search page's bathroom list. It is also important to make sure that the default values are true to their value, so it is easier for the user to know which option dropdown is for which value. These include:
+- **test("Building default value")**
+  - This test makes sure that the default value of the building options is "Building".
+- **test("Floor default value")**
+  - This test makes sure that the default value of the building options is "Floor".
+- **test("Location default value")**
+  - This test makes sure that the default value of the building options is "Location".
+
+### **describe("Allows user to change options")**
+
+These three tests make sure that the values of the select navigation can be changed by the user. These are important to test because user actions based on their criteria are a crucial part of the filtering function, so it has to work correctly. It is neccessary for these values to be able to be selected and then used in the filtering callback function. These include:
+
+- **test("Changing building value")**
+  - The test makes sure that users can change building values. This test uses user events to look at the building test-id, select their option, and then expects it to be selected. In the specific test I wrote, I test if building selected is 'RAI' or not.
+- **test("Changing floor value")**
+  - The test makes sure that users can change floor values. This test uses user events to look at the floor test-id, select their option, and then expects it to be selected. In the specific test I wrote, I test if floor selected is 'Basement' or not.
+- **test("Changing location value")**
+  - The test makes sure that users can change location values. This test uses user events to look at the location test-id, select their option, and then expects it to be selected. In the specific test I wrote, I test if location selected is 'South' or not.
+  
+### **describe("Button Works Correctly")**
+
+These two tests make sure that the filtering search button (or Link) works correctly. These tests are important because we want to make sure that it actually does send the user's selected options to the filtering callback function, which would mean that the function works as intended. These include:
+
+- **test("Button renders correctly")**
+  - This test makes sure that the Link, classified as a button, is rendered correctly and shown in the document. It expects for a Link with the name 'Search!' to be in the filtering navigation bar.
+- **test("Filter callback function called")**
+  - This test makes sure that when the button is clicked, the filtering callback function is called. The test uses user events to click the button, and expects for the callback function to be called. One thing to note is that the `applyFilter()` function is actually located in the component `App.js`, making it hard to test if the filtering logic actually works as intended within `StructuredSearch.js` tests. As this is out of the testing scope for the `StructuredSearch.js` component, it is more efficient and readable to seperate testing and simply test if the callback function is called. 
+  
+# Refactoring the Code
+
+All of the refactoring changes are integrated in the Code Smells section of the report. The final refactored solution is pushed onto the repository and is in `StructuredSearch.js`. 
